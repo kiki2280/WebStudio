@@ -28,26 +28,26 @@ h1 {
     font-size: 56px;
     line-height: 1;
     color: #FFFFFF;
-    letter-spacing: 2%;
+    letter-spacing: 0.05em;
 
 }
 
 h2 {
     font-weight: 700;
     font-size: 36px;
-    letter-spacing: 2%;
+    letter-spacing: 0.05em;
 
 }
 
 h3 {
     font-weight: 500;
     font-size: 20px;
-    letter-spacing: 2%;
+    letter-spacing: 0.05em;
 }
 
 p {
     font-size: 16px;
-    letter-spacing: 2%;
+    letter-spacing: 0.05em;
     color: #434455;
     line-height: 1.5
 }
@@ -140,8 +140,7 @@ p {
 }
 
 .welcome__section h1 {
-    /* margin: 260px 0 48px 0; */
-    
+    margin-top: 260px;
 }
 
 .button {
@@ -277,10 +276,6 @@ p {
     cursor: pointer;
 }
 
-.portfolio-list {
-
-}
-
 .portfolio-item {
     width: 360px;
     transition: box-shadow 0.4s ease-in-out;
@@ -353,15 +348,6 @@ p {
 
 /* -----FOOTER----- */
 
-.footer {
-
-}
-
-
-.footer__desc {
-
-}
-
 .footer__desc-container {
     display: flex;
     justify-content: center;
@@ -374,18 +360,17 @@ p {
     background-color: #2E2F42;
 }
 
-
-.footer__about {
-}
-
 .footer__about p {
-    max-width: 264px;
+    max-width: 280px;
     color: #F4F4FD;
-
 }
 
 .footer__about svg {
     margin-bottom: 16px;
+}
+
+.footer__social {
+    margin-left: 40px;
 }
 
 .footer__social p {
@@ -394,14 +379,7 @@ p {
 
     margin-bottom: 16px;
 }
-.social-list  {
-}
-.social-item {
-}
-.social-link {
-}
-.social-icon {
-}
+
 .footer__subscribe p {
     color: #F4F4FD;
     font-weight: 500;
@@ -412,10 +390,36 @@ p {
 .email-input {
     width:264px ;
     height:40px ;
+
     border: 1px solid #FFFFFF;
     background-color: #2E2F42;
+    color: #FFFFFF;
     border-radius: 4px;
     padding: 0 16px ;
+    font-size: 12px;
 }
-.footer_button {
+
+.email-input::placeholder {
+    color: #FFFFFF; 
+}
+
+    .footer_button {
+    align-items: center;
+    justify-content: center;
+    margin-left: 24px;
+
+    background-color: #4D5AE5;
+    width: 165px;
+    height: 40px ;
+    border: none; 
+    background-color: #4D5AE5;
+    color: #FFFFFF;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer_button:hover {
+    background-color: #404BBF;
 }
