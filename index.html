@@ -10,19 +10,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
     <!-- подключение стиля для сброса -->
     <link rel="stylesheet" href="./css/reset.css">
+
     <!-- посдключение основных стилей  -->
     <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- посдключение media  -->
+    <link rel="stylesheet" href="/css/media.css">
+
+    <!-- подключение JS -->
+    <script src="js/modal.js" defer></script>
+        <script src="js/menu.js" defer></script>
 </head>
 <body>
 
-    <header class="header">
+    <header class="header ">
         <div class=" container header__container">
             <div class="header__logo_nav">
                 <svg width="115" height="24">
                     <use href="./img/symbol-defs.svg#icon-Logo"></use>
                 </svg>
 
-                <nav class="header__nav">
+                <nav class="header__nav not-mobile">
                     <ul>
                         <li><a class="nav__link active" href="#">Studio</a></li>
                         <li><a class="nav__link" href="#">Portfolio</a></li>
@@ -31,20 +39,82 @@
                 </nav>
             </div>
 
-                <ul class="header__contacts" >
-                    <li><a class="" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
-                    <li><a href="tel:+11 (000) 111-11-11">+11 (000) 111-11-11</a></li>
+                <ul class="header__contacts " >
+                    <li class="not-mobile"><a href="mailto:info@devstudio.com">info@devstudio.com</a></li>
+                    <li class="not-mobile"><a href="tel:+11 (000) 111-11-11">+11 (000) 111-11-11</a></li>
                 </ul>
+
+                <button class="burger-btn " type="button" >
+                    <svg class="burger-icon" width="24" height="24">
+                        <use href="./img/symbol-defs-modal.svg#icon-menu"></use>
+                    </svg>
+                </button>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div class="mobile-menu " id="menu-cart"  >
+            <div class="container mobile-menu-container">
+                <button class="menu-close" type="button" >
+                    <svg class="mobile-menu-close-icon" width="8" height="8">
+                        <use href="./img/symbol-defs-modal.svg#icon-close"></use>
+                    </svg>
+                </button>
+                
+                <ul class="mobile-nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link current active" href="./index.html">Studio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Portfolio</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="">Contacts</a></li>
+                </ul>
+        
+                <ul class="mobile-contacts-list">
+                    <li class="mobile-contact-item">
+                        <a class="mobile-contacts-link active" href="mailto:info@devstudio.com">info@devstudio.com</a>
+                    </li>
+                    <li class="mobile-contact-item">
+                        <a class="mobile-contacts-link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+                    </li>
+                </ul>
+        
+                <ul class="mobile-social-list social-list">
+                    <li class="social-item">
+                        <a class="social-link" href="">
+                            <svg class="social-icon" width="24" height="24">
+                                <use href="./img/symbol-defs.svg#icon-icon-instagram1"></use>
+                            </svg></a>
+                    </li>
+                    <li class="social-item">
+                        <a class="social-link" href=""><svg class="social-icon" width="24" height="24">
+                                <use href="./img/symbol-defs.svg#icon-icon-twitter1"></use>
+                            </svg></a>
+                    </li>
+                    <li class="social-item">
+                        <a class="social-link" href=""><svg class="social-icon" width="24" height="24">
+                                <use href="./img/symbol-defs.svg#icon-icon-facebook1"></use>
+                            </svg></a>
+                    </li>
+                    <li class="social-item">
+                        <a class="social-link" href=""><svg class="social-icon" width="24" height="24">
+                                <use href="./img/symbol-defs.svg#icon-icon-linkedin1"></use>
+                            </svg></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="welcome__section  ">
+        <section class="welcome__section ">
             <h1>Effective Solutions<br>for Your Business</h1>
-            <button class="button">Order Service</button>
+            <button class="button button-cart" type="button" data-modal-open>
+                Order Service
+            </button>
         </section>
 
-        <section class="about strategy__section">
+        <section class="about strategy__section ">
             <div class="container">
                 <div class="cards-wrapper">
                 <ul class="cards">
@@ -112,7 +182,7 @@
             </div>
         </section>
 
-        <section class="team__section common-section-cloud">
+        <section class="team__section common-section-cloud ">
             <div class="container">
                 <h2>Our Team</h2>
                 <ul class="team-list">
@@ -292,7 +362,7 @@
             </div>
         </section>
 
-        <section class="ourportfolio__section">
+        <section class="ourportfolio__section ">
             <div class="container">
                 <h2>Our Portfolio</h2>
                 <div class="portfolio-cards">
@@ -411,7 +481,7 @@
 
     </main>
 
-    <footer class="footer">
+    <footer class="footer ">
         <div class="footer__desc">
             <div class=" footer__desc-container">
                 <div class="footer__about">
@@ -465,5 +535,73 @@
             </div>
         </div>
     </footer>
+
+    <div class="overlay" id="modal-cart">
+        <div class="modal ">
+            <header class="modal-header">
+                <button class=" modal-close" type="button">
+                    <svg class="modal-btn" width="8" height="8">
+                        <use href="./img/symbol-defs-modal.svg#icon-modal-close"></use>
+                    </svg>
+                </button>
+                <p class="modal-title">Leave your contacts and we will call you back</p>
+            </header>
+            
+            <form class="modal-form" action="">
+                <div class="madal-form-filed">
+                    <label class="madal-form-label" for="user-name">Name</label>
+                    <div class="modal-form-wrapper">
+                        <input 
+                        class="modal-form-input"
+                        type="text"
+                        name="user-name"
+                        id="user-name" 
+                        />
+                        <svg class="modal-form-icon" width="18" height="24">
+                            <use href="./img/symbol-defs-modal.svg#icon-modal1"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="madal-form-filed">
+                    <label class="madal-form-label" for="user-phone">Phone</label>
+                    <div class="modal-form-wrapper">
+                        <input class="modal-form-input" type="text" name="user-phone" id="user-phone" />
+                        <svg class="modal-form-icon" width="18" height="24">
+                            <use href="./img/symbol-defs-modal.svg#icon-modal2"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="madal-form-filed">
+                    <label class="madal-form-label" for="user-email">Email</label>
+                    <div class="modal-form-wrapper">
+                        <input class="modal-form-input" type="text" name="user-email" id="user-email" />
+                        <svg class="modal-form-icon" width="18" height="24">
+                            <use href="./img/symbol-defs-modal.svg#icon-modal3"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="modal-form-field message">
+                    <label class="madal-form-label" for="user-comment">Comment</label>
+                    <textarea class="modal-form-message" name="user-comment" id="user-comment" placeholder="Text input"></textarea>
+                </div>
+
+                <!-- CHECKBOX -->
+                <div class="modal-form-agreement">
+                    <input class="visually-hidden" type="checkbox" name="user-privacy" value="true" id="user-privacy" />
+                    <label class="modal-form-agreement-text" for="user-privacy">
+                        <span class="modal-form-checkbox">
+                            <svg class="modal-form-checkbox-icon" width="10" height="8">
+                                <use href="#icon-vector"></use>
+                            </svg>
+                        </span>
+                        <span>I accept the terms and conditions of the
+                            <a class="modal-form-agreement-link" href="#">Privacy Policy</a>
+                        </span>
+                    </label>
+                </div>
+                <button class="button low-btn " type="submit">Send</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

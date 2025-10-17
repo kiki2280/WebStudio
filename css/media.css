@@ -1,0 +1,9 @@
+@media (max-width: 600px) {
+    .burger-btn {
+        display: flex;
+    }
+    .not-mobile {
+        display: none;
+    }
+
+}

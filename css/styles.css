@@ -105,7 +105,7 @@ p {
 .nav__link.active::after {
     content: "";
     position: absolute;
-    bottom: -27px; 
+    bottom: -29px; 
     left: 0;
     width: 100%;
     height: 4px;
@@ -117,6 +117,134 @@ p {
     color: #434455;
 }
 
+.burger-btn {
+    display: none;
+}
+
+.not-mobile {
+    display: block;
+    /* или flex, если нужно */
+}
+
+/* ----------HEADER MOBILE---------- */
+
+/* Скрыто по умолчанию */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 250ms ease, visibility 250ms ease;
+    z-index: 999;
+    /* чтобы меню было поверх всего */
+}
+
+/* Показать меню */
+.mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Контейнер меню */
+.mobile-menu-container {
+    position: relative;
+    padding: 72px 16px 40px 16px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    /* прокрутка при длинном меню */
+}
+
+/* Кнопка закрытия */
+.menu-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    background-color: #e7e9fc;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 250ms ease, border 250ms ease;
+}
+
+.menu-close:hover,
+.menu-close:focus,
+.menu-close:active {
+    background-color: #404bbf;
+    border: none;
+}
+
+/* Навигация и ссылки */
+.mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: auto;
+}
+
+.mobile-nav-list .nav-link {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    color: #2e2f42;
+    text-decoration: none;
+}
+
+/* Контакты */
+.mobile-contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.mobile-contacts-link {
+    font-size: 20px;
+    color: #2e2f42;
+    text-decoration: none;
+}
+
+/* Социальные иконки */
+.mobile-social-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Бургер кнопка */
+.burger-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Показать бургер на мобильных */
+@media (max-width: 768px) {
+    .burger-btn {
+        display: block;
+    }
+
+    .header__nav,
+    .header__contacts {
+        display: none;
+        /* скрываем обычное меню на мобилке */
+    }
+}
 /* -----WELCOME_SECTION------- */
 
 .welcome__section {
@@ -423,3 +551,238 @@ p {
 .footer_button:hover {
     background-color: #404BBF;
 }
+
+/* -----MODAL---- */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 47, 66, 0.4);
+
+    display: none;
+    /* visibility: hidden; */
+    pointer-events: auto;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal {
+    width: 408px;
+    min-height: 584px;
+    padding: 72px 16px 24px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    border-radius: 4px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+        0 2px 1px 0 rgba(0, 0, 0, 0.2);
+    background: #fcfcfc;
+
+    transform: translateX(-50%) translateY(-50%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-header {
+
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    width: 24px;
+    height: 24px;
+    background-color: #e7e9fc;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    cursor: pointer;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-close-btn {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.modal-close {
+position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    background-color: #e7e9fc;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon-close-btn {
+    display: flex;
+
+    
+}
+
+.modal-close-btn:hover {
+    background-color: #404BBF;
+}
+
+.modal-title {
+    margin-bottom: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: center;
+    font-weight: 500;
+    color: #2e2f42;
+}
+
+
+.modal-form {
+
+}
+
+.madal-form-filed {
+    margin-bottom: 8px;
+}
+
+.modal-form-field.message {
+    margin-bottom: 16px;
+}
+
+.madal-form-label {
+    display: block;
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+}
+
+.modal-form-wrapper {
+    position: relative;
+}
+
+.modal-form-input {
+    width: 100%;
+    height: 40px;
+    padding: 8px 38px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+}
+
+.modal-form-icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    fill: #2e2f42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input:focus+.modal-form-icon {
+    fill: #4d5ae5;
+}
+
+.modal-form-input:focus {
+    border-color: #4d5ae5;
+}
+
+.message {
+
+}
+
+.modal-form-message {
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    width: 100%;
+    height: 120px;
+    resize: none;
+    padding: 8px 16px;
+    color: rgba(46, 47, 66, 0.4);
+
+    outline: transparent;
+    background-color: transparent;
+
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-message:focus {
+    border-color: #4d5ae5;
+}
+
+.modal-form-message::placeholder {
+    color: rgba(46, 47, 66, 0.4);
+}
+
+.modal-form-agreement {
+    margin-bottom: 24px;
+}
+
+.visually-hidden {
+
+}
+
+
+
+.modal-form-agreement-text {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    gap: 8px;
+    flex-wrap: nowrap;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    margin-top: -17px;
+}
+
+
+
+.modal-form-agreement-link {
+
+    
+}
+
+.button {
+
+}
+
+.low-btn {
+    display: block;
+    margin: 0 auto;
+}
+
