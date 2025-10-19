@@ -1,4 +1,4 @@
-@media (max-width: 600px) {
+@media (max-width: 582px) {
     .burger-btn {
         display: flex;
     }
@@ -6,4 +6,54 @@
         display: none;
     }
 
+    .cards h3 {
+        text-align: center;
+        font-size: 36px;
+        font-weight: 700;
+    }
+
+    .cards p {
+        color: #434455;
+        font-weight: 500;
+    }
+
+
+        .footer__social {
+            margin-left: 0px;
+        }
+
+}
+
+
+@media (max-width: 780px) {
+    .about .cards-wrapper {
+            gap: 70px;
+    }
+
+    .footer__social {
+            margin-left: 0px;
+        }
+
+    .footer__about svg {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 16px;
+    }
+
+    .footer__social p {
+    text-align: center;
+    }
+
+    .footer__subscribe {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 16px;
+    }
+
+    .footer__subscribe p {
+        margin-bottom: 0px;
+    }
 }

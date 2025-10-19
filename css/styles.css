@@ -62,6 +62,7 @@ p {
     padding: 24px 0;
     width: 100%;
     z-index: 100;
+    height: 74px;
 
     background-color: #FFFFFF;
     position: fixed;
@@ -74,11 +75,16 @@ p {
 .header__container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 .header__logo_nav {
     display: flex;
-    gap: 76px;
+
+}
+
+.logo {
+    width: 116px;
+    height: 24px;
+    margin-right: 70px;
 }
 
 .header__container ul {
@@ -105,7 +111,7 @@ p {
 .nav__link.active::after {
     content: "";
     position: absolute;
-    bottom: -29px; 
+    bottom: -32px; 
     left: 0;
     width: 100%;
     height: 4px;
@@ -113,8 +119,17 @@ p {
     border-radius: 2px;
 }
 
+.header__contacts {
+
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .header__contacts li {
     color: #434455;
+    margin-left: 40px;
 }
 
 .burger-btn {
@@ -249,8 +264,8 @@ p {
 
 .welcome__section {
     min-height: 600px;
-
-    height: 100vh;
+/* 
+    height: 100vh; */
 
     display: flex;
     flex-direction: column;
@@ -272,15 +287,18 @@ p {
 }
 
 .button {
-    margin-bottom: 188px;
+
 
     width: 169px;
-    height: 56px;
+    height: 56px; 
     background-color: #4D5AE5;
     color: #FFFFFF;
     font-size: 16px;
     border-radius: 4px;
     transition: all 0.3s ease-in-out;
+    
+    margin-bottom: 188px;
+    
 }
 
 .button:hover{
@@ -441,7 +459,7 @@ p {
 
 .portfolio-card1 {
     opacity: 1;
-    transition: opacity 0.6s ease-in-out;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .portfolio-card2 {
@@ -459,7 +477,7 @@ p {
     border: none;
     opacity: 0;
     
-    transition: opacity 0.6s ease-in-out;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .portfolio-item-wrapper {
@@ -475,6 +493,9 @@ p {
 }
 
 /* -----FOOTER----- */
+.footer__desc {
+    
+}
 
 .footer__desc-container {
     display: flex;
@@ -483,7 +504,7 @@ p {
     flex-wrap: wrap;
 
     gap: 80px;
-    padding: 100px 0;
+    padding: 100px 70px;
     
     background-color: #2E2F42;
 }
@@ -506,6 +527,12 @@ p {
     font-weight: 500;
 
     margin-bottom: 16px;
+}
+
+.footer__subscribe {
+
+    
+
 }
 
 .footer__subscribe p {
@@ -551,6 +578,8 @@ p {
 .footer_button:hover {
     background-color: #404BBF;
 }
+
+
 
 /* -----MODAL---- */
 
@@ -775,10 +804,6 @@ position: absolute;
 .modal-form-agreement-link {
 
     
-}
-
-.button {
-
 }
 
 .low-btn {
